@@ -3,10 +3,24 @@
     <head>
         <meta charset="UTF-8" />
         <link rel="stylesheet" href="{{url_for('crud.static',filename='style.css')}}" />
-        <title>CRUD앱</title>
+        <title>사용자 일람</title>
     </head>
     <body>
-        <p class="crud">CRUD 애플리케이션</p>
+        <h2>사용자 일람</h2>
+        <table>
+            <tr>
+                <th>사용자 ID</th>
+                <th>사용자 명</th>
+                <th>메일주소</th>
+            </tr>
+            {% for i in users %}
+                <tr>
+                    <td>{{ i.id }}</td>
+                    <td>{{ i.username }}</td>
+                    <td>{{ i.email }}</td>
+                </tr>
+            {% endfor %}
+        </table>
     </body>
 </html>
 
